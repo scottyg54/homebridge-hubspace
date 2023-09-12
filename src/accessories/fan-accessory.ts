@@ -33,7 +33,7 @@ export class FanAccessory extends HubspaceAccessory{
             .onGet(this.getRotationSpeed.bind(this))
             .onSet(this.setRotationSpeed.bind(this))
             .setProps({
-                minValue: 20,
+                minValue: 0,
                 maxValue: 100,
                 minStep: 10
             });
