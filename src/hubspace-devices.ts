@@ -17,6 +17,10 @@ export const Devices: DeviceDef[] = [
             {
                 functionClass: 'fan-speed',
                 characteristic: FunctionCharacteristic.FanSpeed
+            },
+            {
+                functionClass: 'fan-direction',
+                characteristic: FunctionCharacteristic.RotationDirection
             }
         ]
     },

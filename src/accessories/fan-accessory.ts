@@ -34,8 +34,14 @@ export class FanAccessory extends HubspaceAccessory{
             .setProps({
                 minValue: 0,
                 maxValue: 100,
-                minStep: 25
+                minStep: 10
             });
+    }
+
+    private configureRotationDirection(): void{
+        this.service.getCharacteristic(this.platform.Characteristic.RotationDirection)
+            .onGet(this.getRotationDirection.bind(this))
+            .onSet(this.setRotationDirection.bind(this));
     }
 
     private async setActive(value: CharacteristicValue): Promise<void>{
@@ -76,6 +82,27 @@ export class FanAccessory extends HubspaceAccessory{
 
     private async setRotationSpeed(value: CharacteristicValue): Promise<void>{
         const deviceFc = this.getFunctionForCharacteristics(FunctionCharacteristic.FanSpeed);
+
+        await this.deviceService.setValue(this.device.deviceId, deviceFc, value);
+    }
+
+    private async getRotationDirection(): Promise<CharacteristicValue>{
+        const deviceFc = this.getFunctionForCharacteristics(FunctionCharacteristic.RotationDirection);
+
+        // Try to get the value
+        const value = await this.deviceService.getValue(this.device.deviceId, deviceFc);
+
+        // If the value is not defined then show 'Not Responding'
+        if(isNullOrUndefined(value)){
+            throw new this.platform.api.hap.HapStatusError(this.platform.api.hap.HAPStatus.SERVICE_COMMUNICATION_FAILURE);
+        }
+
+        // Otherwise return the value
+        return value!;
+    }
+
+    private async setRotationDirection(value: CharacteristicValue): Promise<void>{
+        const deviceFc = this.getFunctionForCharacteristics(FunctionCharacteristic.RotationDirection);
 
         await this.deviceService.setValue(this.device.deviceId, deviceFc, value);
     }
