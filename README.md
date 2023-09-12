@@ -31,7 +31,6 @@ Not all features for all products are implemented. Please see the functions belo
 | --- | --- |
 | [Universal Smart Wi-Fi 4-Speed Ceiling Fan](https://www.homedepot.com/p/Hampton-Bay-Universal-Smart-Wi-Fi-4-Speed-Ceiling-Fan-White-Remote-Control-For-Use-Only-With-AC-Motor-Fans-Powered-by-Hubspace-76278/315169181?) | <ul><li>Light on/off</li><li>Fan on/off</li><li>Light brightness</li><li>Fan speed</li></ul> |
 | [Universal Smart Wi-Fi 9-Speed Reversible Ceiling Fan](hhttps://www.homedepot.com/p/Home-Decorators-Collection-Tager-72-in-Indoor-Outdoor-Matte-Black-Smart-Ceiling-Fan-with-Remote-Control-Powered-by-Hubspace-N383C-MBK-V8/322983249) | <ul><li>Fan on/off</li><li>Fan speed</li><li>Reverse direction</li><li>Comfort-Breeze &#8482;</li></ul> |
-
 | [Defiant Smart Plug](https://www.homedepot.com/p/Defiant-15-Amp-120-Volt-Smart-Wi-Fi-Bluetooth-Plug-with-1-Outlet-Powered-by-Hubspace-HPPA11AWB/315636834) | <ul><li>Power on/off</li></ul> |
 
 # Development
