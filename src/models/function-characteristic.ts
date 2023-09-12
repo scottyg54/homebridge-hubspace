@@ -7,7 +7,5 @@ export enum FunctionCharacteristic{
     FanSpeed,
     Brightness,
     ColorRgb,
-    Dummy5,
-    Dummy6,
     RotationDirection
 }
