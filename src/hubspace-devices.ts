@@ -21,6 +21,10 @@ export const Devices: DeviceDef[] = [
             {
                 functionClass: 'fan-reverse',
                 characteristic: FunctionCharacteristic.RotationDirection
+            },
+            {
+                functionClass: 'comfort-breeze',
+                characteristic: FunctionCharacteristic.SwingMode
             }
         ]
     },

@@ -20,6 +20,7 @@ export class FanAccessory extends HubspaceAccessory{
         this.configureActive();
         this.configureRotationSpeed();
         this.configureRotationDirection();
+        this.configureSwingMode();
     }
 
     private configureActive(): void{
@@ -43,6 +44,12 @@ export class FanAccessory extends HubspaceAccessory{
         this.service.getCharacteristic(this.platform.Characteristic.RotationDirection)
             .onGet(this.getRotationDirection.bind(this))
             .onSet(this.setRotationDirection.bind(this));
+    }
+
+    private configureSwingMode(): void{
+        this.service.getCharacteristic(this.platform.Characteristic.SwingMode)
+            .onGet(this.getSwingMode.bind(this))
+            .onSet(this.setSwingMode.bind(this));
     }
 
     private async setActive(value: CharacteristicValue): Promise<void>{
@@ -108,4 +115,24 @@ export class FanAccessory extends HubspaceAccessory{
         await this.deviceService.setValue(this.device.deviceId, deviceFc, value);
     }
 
+    private async getSwingMode(): Promise<CharacteristicValue>{
+        const deviceFc = this.getFunctionForCharacteristics(FunctionCharacteristic.SwingMode);
+
+        // Try to get the value
+        const value = await this.deviceService.getValue(this.device.deviceId, deviceFc);
+
+        // If the value is not defined then show 'Not Responding'
+        if(isNullOrUndefined(value)){
+            throw new this.platform.api.hap.HapStatusError(this.platform.api.hap.HAPStatus.SERVICE_COMMUNICATION_FAILURE);
+        }
+
+        // Otherwise return the value
+        return value!;
+    }
+
+    private async setSwingMode(value: CharacteristicValue): Promise<void>{
+        const deviceFc = this.getFunctionForCharacteristics(FunctionCharacteristic.SwingMode);
+
+        await this.deviceService.setValue(this.device.deviceId, deviceFc, value);
+    }
 }
