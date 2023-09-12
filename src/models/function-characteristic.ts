@@ -5,7 +5,9 @@ export enum FunctionCharacteristic{
     None,
     Power,
     FanSpeed,
-    RotationDirection,
     Brightness,
-    ColorRgb
+    ColorRgb,
+    Dummy5,
+    Dummy6,
+    RotationDirection
 }
