@@ -99,6 +99,7 @@ export class DiscoveryService{
             const response = await this._httpClient
                 .get<DeviceResponse[]>(`accounts/${this._platform.accountService.accountId}/metadevices`);
 
+            this._platform.log.info(JSON.stringify(response));
             // Get only leaf devices with type of 'device'
             return response.data
                 .filter(d => d.children.length === 0 && d.typeId === 'metadevice.device')
