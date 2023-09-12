@@ -23,7 +23,7 @@ export const Devices: DeviceDef[] = [
                 characteristic: FunctionCharacteristic.RotationDirection
             },
             {
-                functionClass: 'comfort-breeze',
+                functionClass: 'toggle',
                 characteristic: FunctionCharacteristic.SwingMode
             }
         ]
