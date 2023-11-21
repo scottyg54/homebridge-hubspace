@@ -1,7 +1,7 @@
 {
   "displayName": "Homebridge Hubspace",
   "name": "@ronniepettersson/homebridge-hubspace",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Homebridge plugin for controlling Hubspace accessories.",
   "homepage": "https://github.com/ronniepettersson/homebridge-hubspace#readme",
   "author": "Ronnie Pettersson",
@@ -14,8 +14,8 @@
     "url": "https://github.com/ronniepettersson/homebridge-hubspace/issues"
   },
   "engines": {
-    "homebridge": "^1.6.0",
-    "node": "^14.21.3 || ^16.20.2 || ^18.16.0"
+    "homebridge": "^1.7.0",
+    "node": "^16.20.2 || ^18.18.2 || ^20.9.0"
   },
   "main": "dist/index.js",
   "scripts": {
@@ -39,7 +39,7 @@
     "@typescript-eslint/eslint-plugin": "^5.51.0",
     "@typescript-eslint/parser": "^5.51.0",
     "eslint": "^8.34.0",
-    "homebridge": "^1.6.0",
+    "homebridge": "^1.7.0",
     "nodemon": "^3.0.1",
     "rimraf": "^4.1.2",
     "ts-node": "^10.9.1",
