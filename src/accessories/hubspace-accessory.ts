@@ -47,10 +47,14 @@ export abstract class HubspaceAccessory{
         this.deviceService = platform.deviceService;
         this.device = accessory.context.device;
 
+        let model = 'Default';
+        if (( this.device.model.length > 0 ) && (this.device.model[0].length > 0 )) {
+            model = this.device.model[0];
+        }
+
         this.accessory.getService(this.platform.Service.AccessoryInformation)!
             .setCharacteristic(this.platform.Characteristic.Manufacturer, this.device.manufacturer ?? 'N/A')
-            // .setCharacteristic(this.platform.Characteristic.Model, this.device.model.length > 0 ? this.device.model[0] : 'N/A')
-            .setCharacteristic(this.platform.Characteristic.Model, this.device.model ?? 'N/A')
+            .setCharacteristic(this.platform.Characteristic.Model, model)
             .setCharacteristic(this.platform.Characteristic.SerialNumber, this.device.deviceId ?? 'N/A');
 
     }
