@@ -65,6 +65,7 @@ export abstract class HubspaceAccessory{
      * @returns Found device function or {@link NoDeviceFunction}
      */
     protected getFunctionForCharacteristics(characteristic: FunctionCharacteristic): DeviceFunction{
+        this.platform.log.info(JSON.stringify(this.device.functions));
         const fc = this.device.functions.find(f => f.characteristic === characteristic);
 
         if(!fc){
