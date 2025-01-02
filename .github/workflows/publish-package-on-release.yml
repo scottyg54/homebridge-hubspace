@@ -1,6 +1,6 @@
 name: Publish NPM package
 
-on:
+on: workflow dispatch
   release:
     types: [created]
 
