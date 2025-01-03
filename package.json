@@ -1,7 +1,7 @@
 {
   "displayName": "Homebridge Hubspace",
   "name": "@scottyg54/homebridge-hubspace",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Scott-Homebridge plugin for controlling Hubspace accessories.",
   "homepage": "https://github.com/scottyg54/homebridge-hubspace#readme",
   "author": "new devs by Scott Garfield",
