@@ -23,7 +23,3 @@ jobs:
         run: npm publish --access public --tag ${{ github.event.release.prerelease && 'preview' || 'latest' }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
-      - name: publish-with-yarn
-        uses: simenandre/publish-with-yarn@v2.0.0
-        env:
-          npm_auth_token: ${{ secrets.NPM_PUBLISH_TOKEN }}
