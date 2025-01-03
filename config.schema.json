@@ -1,5 +1,5 @@
 {
-  "pluginAlias": "Hubspace",
+  "pluginAlias": "@scottyg54/homebridge-hubspace",
   "pluginType": "platform",
   "singular": true,
   "schema": {
